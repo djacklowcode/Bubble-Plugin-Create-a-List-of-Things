@@ -65,7 +65,7 @@ async function(properties, context) {
 
   // Build JSONL (array of lines) from json_keys = [{ key, value }],
   // where each 'value' is a delimited list; produce one line per index.
-  const buildJsonlFromKeyLists = (pairs, delimiter) => {
+  const buildJsonlFromKeyLists = (pairs, delimiter, persistentPairs) => {
     const cols = (Array.isArray(pairs) ? pairs : [])
       .filter(p => p && p.key != null)
       .map(p => {
@@ -78,11 +78,26 @@ async function(properties, context) {
 
     if (!cols.length) return { lines: [], count: 0 };
 
+    // Process persistent key-value pairs that should be added to every row
+    const persistentObj = {};
+    if (Array.isArray(persistentPairs)) {
+      persistentPairs
+        .filter(p => p && p.key != null)
+        .forEach(p => {
+          const k = toStr(p.key).trim();
+          if (k) {
+            // Use splitValueList to handle user mistakes (quotes, JSON, etc.) and take first value
+            const processedValues = splitValueList(p.value, delimiter);
+            persistentObj[k] = processedValues[0] || "";
+          }
+        });
+    }
+
     const rowCount = cols.reduce((m, c) => Math.max(m, c.values.length), 0);
 
     const lines = [];
     for (let i = 0; i < rowCount; i++) {
-      const obj = {};
+      const obj = { ...persistentObj }; // Start with persistent values
       for (const c of cols) {
         const v = (c.values[i] !== undefined ? c.values[i] : "");
         obj[c.key] = toStr(v); // force string; JSON.stringify of whole obj below
@@ -130,7 +145,10 @@ async function(properties, context) {
       return { returned_error: true, error_message: "json_keys must be a non-empty array of {key, value} in Keys mode." };
     }
 
-    const { lines, count } = buildJsonlFromKeyLists(keyPairs, valueDelimiter);
+    // Get persistent key-value pairs that should be added to every row
+    const persistentKeyPairs = properties.json_keys_persistent || [];
+
+    const { lines, count } = buildJsonlFromKeyLists(keyPairs, valueDelimiter, persistentKeyPairs);
     if (count === 0) {
       return { returned_error: true, error_message: "No rows could be formed from the provided key/value lists." };
     }
