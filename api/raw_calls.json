@@ -1,0 +1,75 @@
+{
+    "auth": "none",
+    "calls": {
+        "AAC": {
+            "body": "_*_JSONL Format_*_",
+            "body_params": {
+                "AAI": {
+                    "doc": "This is the JSONL formatted data. It is valid JSON with a newline character separating them. You can use the :formatted as text operator. You can create a maximum of 1000 objects in each operation.\n\nTo give a contact as an example:\n\n{\"First\":\"Bob\",\"Last\":\"Simonson\",\"Occupation\":\"Doctor\"}\n{\"First\":\"Sarah\",\"Last\":\"Bobson\",\"Occupation\":\"Developer\"}",
+                    "key": "JSONL Format",
+                    "private": true
+                }
+            },
+            "body_type": "plain_text",
+            "data_type": "text",
+            "doc_link": "https://manual.bubble.io/core-resources/api/the-bubble-api/the-data-api/data-api-requests#bulk-create-things",
+            "headers": {
+                "AAG": {
+                    "key": "Content-Type",
+                    "private": true,
+                    "value": "text/plain",
+                    "visibility": "hidden"
+                },
+                "AAq": {
+                    "doc": "This is your app API key, prefaced by Bearer.",
+                    "key": "Authorization",
+                    "private": true,
+                    "visibility": "secret"
+                }
+            },
+            "initialized": true,
+            "method": "post",
+            "name": "Create a List of Things (API)",
+            "no_types": true,
+            "publish_as": "action",
+            "rank": 0,
+            "ret_value": "api.1760172847434x787882252066881500.plugin_api.AAC",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AAC\":{\"caption\":\"Create Multiple Thing\",\"fields\":{\"_p_body.status\":{\"ret_btype\":\"text\",\"caption\":\"body status\",\"sample_value\":\"string value\",\"path\":[\"body\",\"status\"],\"ret_value\":\"text\"},\"_p_body.message\":{\"ret_btype\":\"text\",\"caption\":\"body message\",\"sample_value\":\"string value\",\"path\":[\"body\",\"message\"],\"ret_value\":\"text\"},\"_p_error.status_code\":{\"ret_btype\":\"number\",\"caption\":\"error status_code\",\"sample_value\":200,\"path\":[\"error\",\"status_code\"],\"ret_value\":\"number\"},\"_p_error.status_message\":{\"ret_btype\":\"text\",\"caption\":\"error status_message\",\"sample_value\":\"string value\",\"path\":[\"error\",\"status_message\"],\"ret_value\":\"text\"},\"_p_error.body\":{\"ret_btype\":\"text\",\"caption\":\"error body\",\"sample_value\":\"string value\",\"path\":[\"error\",\"body\"],\"ret_value\":\"text\"},\"_p_returned_an_error\":{\"ret_btype\":\"boolean\",\"caption\":\"returned_an_error\",\"sample_value\":false,\"path\":[\"returned_an_error\"],\"ret_value\":\"boolean\"}}}}",
+            "url": "https://[app ID].bubbleapps.io/version-[version]/api/1.1/obj/[objectname]/bulk",
+            "url_params": {
+                "AAE": {
+                    "doc": "This is your object name. You can use either the original name or current name. See App settings > API > \"Use field display instead of ID for key names\"",
+                    "key": "objectname",
+                    "private": true,
+                    "value": "{{Your Object Name}}",
+                    "visibility": "public"
+                },
+                "AAj": {
+                    "key": "version",
+                    "private": true,
+                    "value": "{{version}}"
+                },
+                "AAm": {
+                    "key": "app ID",
+                    "private": true,
+                    "visibility": "secret"
+                }
+            },
+            "wrap_error": false
+        },
+        "AAM": {
+            "initialized": true,
+            "method": "get",
+            "name": "🔌creation response",
+            "publish_as": "data",
+            "rank": 1,
+            "ret_value": "api.1760172847434x787882252066881500.plugin_api.AAM",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AAM\":{\"caption\":\"🔌creation response\",\"fields\":{\"_p_status\":{\"ret_btype\":\"text\",\"caption\":\"status\",\"sample_value\":\"string value\",\"path\":[\"status\"]},\"_p_id\":{\"ret_btype\":\"text\",\"caption\":\"id\",\"sample_value\":\"string value\",\"path\":[\"id\"]}}}}",
+            "url": "//dummy"
+        }
+    },
+    "human": "API",
+    "token_param_name": "Authorization"
+}

@@ -1,0 +1,146 @@
+{
+    "category": "data (things)",
+    "display": "Create a List of Things (SSA)",
+    "fields": {
+        "AAN": {
+            "caption": "object_type",
+            "editor": "custom_type",
+            "name": "object_type",
+            "rank": 2
+        },
+        "AAO": {
+            "caption": "JSONL",
+            "doc": "This is the JSONL formatted data. It is valid JSON with a newline character separating them. You can use the :formatted as text operator. You can create a maximum of 1000 objects in each operation.  To give a contact as an example:  {\"First\":\"Bob\",\"Last\":\"Simonson\",\"Occupation\":\"Doctor\"} {\"First\":\"Sarah\",\"Last\":\"Bobson\",\"Occupation\":\"Developer\"}",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "ndjson_list",
+            "rank": 10,
+            "value": "text"
+        },
+        "AAW": {
+            "caption": "object_type_text",
+            "editor": "DynamicValue",
+            "name": "object_type_text",
+            "rank": 3,
+            "value": "text"
+        },
+        "AAd": {
+            "caption": "version",
+            "editor": "DynamicValue",
+            "name": "version",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAf": {
+            "caption": "--------Setup--------",
+            "editor": "Label",
+            "name": "setup_info",
+            "rank": 0
+        },
+        "AAg": {
+            "caption": "--------Data Option--------",
+            "editor": "Label",
+            "name": "data_inf",
+            "rank": 4
+        },
+        "AAh": {
+            "caption": "Key value pairs",
+            "doc": "These are list of keys and list of items required for creating",
+            "editor": "key_value_list",
+            "name": "json_keys",
+            "rank": 8,
+            "value": "text"
+        },
+        "AAi": {
+            "caption": "Keys or JSONL",
+            "default_val": "Keys",
+            "doc": "Here you can define whether to use key value pairs or JSONL formatting as defined in Bubble Data API",
+            "editor": "Dropdown",
+            "name": "keys_or_raw",
+            "options": "Keys,JSONL",
+            "rank": 5
+        },
+        "AAr": {
+            "caption": "--------Create with Keys--------",
+            "editor": "Label",
+            "name": "keys_info",
+            "rank": 6
+        },
+        "AAs": {
+            "caption": "--------Create with JSONL--------",
+            "editor": "Label",
+            "name": "jsonl_info",
+            "rank": 9
+        },
+        "AAt": {
+            "caption": "List Delimiter",
+            "default_val": ",",
+            "doc": "This is the delimiter for your list values. It defaults to comma: ','",
+            "editor": "DynamicValue",
+            "name": "key_delimiter",
+            "rank": 7,
+            "value": "text"
+        }
+    },
+    "return_value": {
+        "AAL": {
+            "caption": "Success Responses",
+            "is_list": true,
+            "name": "created_data",
+            "rank": 0,
+            "value": "api.1760172847434x787882252066881500.plugin_api.AAM"
+        },
+        "AAP": {
+            "caption": "Object Type",
+            "name": "object_type_text",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAQ": {
+            "caption": "List of Created Things",
+            "is_list": true,
+            "name": "created_data_id",
+            "rank": 2,
+            "value": "custom_data_AAN"
+        },
+        "AAX": {
+            "caption": "Returned an Error?",
+            "name": "returned_error",
+            "rank": 3,
+            "value": "boolean"
+        },
+        "AAY": {
+            "caption": "Requested Count",
+            "name": "requested_count",
+            "rank": 4,
+            "value": "number"
+        },
+        "AAZ": {
+            "caption": "Created Count",
+            "name": "created_count",
+            "rank": 5,
+            "value": "number"
+        },
+        "AAa": {
+            "caption": "List of Created ID's",
+            "is_list": true,
+            "name": "created_ids",
+            "rank": 6,
+            "value": "text"
+        },
+        "AAb": {
+            "caption": "Error message",
+            "name": "error_message",
+            "rank": 7,
+            "value": "text"
+        },
+        "AAc": {
+            "caption": "Raw Results",
+            "name": "raw_results",
+            "rank": 8,
+            "value": "text"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

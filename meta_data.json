@@ -1,0 +1,14 @@
+{
+    "categories": {
+        "0": "productivity",
+        "1": "technical",
+        "2": "data (things)"
+    },
+    "data_tracked": false,
+    "description": "NOTE: You will need to be on a paid Bubble plan to use API features and this plugin.\n\nInstructions:\n\n\n⚙️ General Setup\n\n1️⃣ Enable the Data API in your App settings for your desired data type and 🚨 *configure appropriate privacy rules.*\n\n2️⃣ Select (or don’t) using field names instead of ID in your app settings>API\n\n3️⃣ In the Plugin settings: Enter your app API key for the API (Bearer {your app API key})or SSA (your app API key) actions , Add your app ID\n\n⚡Create via API connector\n\nThe normal approach to using the bulk Data API - it’s fast but harder to setup and manage responses\n\nHow to use:\n\n1️⃣ Set up in your front-end and back-end workflows with the “*Create a List of things (API)*” action\n\n⚡Create via SSA Action\n\nThe most ‘native’ feeling action to create multiple things - it’s comprehensive but will have a short warm up time when using for the first time in a while. \n\n1️⃣ Set up in your front-end and back-end workflows with the “*Create a List of things (SSA)*” action\n\n\n🗒️ Important notes:\n\n- Objects will be created by App User - this means that privacy rules need to be configured (e.g. adding the user to the data type)\n- Again, enabling the data API means you need to have the appropriate privacy rules configured\n\nBubble's Bulk Data API documentation can be found here:  https://manual.bubble.io/core-resources/api/the-bubble-api/the-data-api/data-api-requests#bulk-create-things ",
+    "image": "//meta-q.cdn.bubble.io/f1760176575204x667528624382682100/ChatGPT%20Image%20Oct%2011%2C%202025%2C%2011_55_37%20AM.png",
+    "license": "open_source",
+    "name": "Create a List of Things",
+    "plugin_instructions": "Instructions:\n\nAs above\n\nBubble's Bulk Data API documentation can be found here: https://manual.bubble.io/core-resources/api/the-bubble-api/the-data-api/data-api-requests#bulk-create-things",
+    "sa_node_version": 22
+}
