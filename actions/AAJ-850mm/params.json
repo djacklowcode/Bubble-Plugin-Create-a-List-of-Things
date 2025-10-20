@@ -14,7 +14,7 @@
             "editor": "DynamicValue",
             "is_list": true,
             "name": "ndjson_list",
-            "rank": 10,
+            "rank": 11,
             "value": "text"
         },
         "AAW": {
@@ -45,7 +45,7 @@
         },
         "AAh": {
             "caption": "Key value pairs",
-            "doc": "These are list of keys and list of items required for creating",
+            "doc": "These are list of keys and list of items required for creating. The plugin expects a string of text split by your custom delimiter. Ensure that the same number of items exists for each key",
             "editor": "key_value_list",
             "name": "json_keys",
             "rank": 8,
@@ -70,7 +70,7 @@
             "caption": "--------Create with JSONL--------",
             "editor": "Label",
             "name": "jsonl_info",
-            "rank": 9
+            "rank": 10
         },
         "AAt": {
             "caption": "List Delimiter",
@@ -79,6 +79,14 @@
             "editor": "DynamicValue",
             "name": "key_delimiter",
             "rank": 7,
+            "value": "text"
+        },
+        "AAu": {
+            "caption": "json_keys_persistent",
+            "doc": "Optional: These are keys that will be added to each item. This would be useful to add a User ID to each item, for example. The plugin expects a string of text split by your custom delimiter.",
+            "editor": "key_value_list",
+            "name": "json_keys_persistent",
+            "rank": 9,
             "value": "text"
         }
     },
